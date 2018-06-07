@@ -1,0 +1,14 @@
+Criar uma tela de cadastro de usuários com os campos 
+ 
+	Usuário  
+	Senha 
+	Data de cadastro
+	Acesso Usuários
+	Acesso Clientes
+Com as mesmas funcionalidades da tela de clientes.
+
+Criar uma tela de Login no sistema e uma tela de 
+Menu (dois botões) para qual área o usuário 
+quer acessar baseado no acesso.
+
+
