@@ -13,4 +13,15 @@ public class RepositoryFactory {
 		return new ClienteRepository(fabrica);
 	}
 	
+public static UsuarioRepositoryInterface criaUsuarioRepository(){
+		
+		ConnectionFactory fabrica = new ConnectionFactory(
+				"root", 
+				"1234", 
+				"jdbc:mysql://192.168.10.4:3306/aulas_sistema_cliente"
+				+ "?useTimezone=true&serverTimezone=UTC");
+		
+		return new UsuarioRepository(fabrica);
+	}
+	
 }

@@ -6,4 +6,9 @@ public class ViewFactory {
 		return new ClienteView();
 	}
 	
+	public static LoginViewInterface criaLoginView() throws Exception{
+		return new LoginView();
+	}
+	
+	
 }
