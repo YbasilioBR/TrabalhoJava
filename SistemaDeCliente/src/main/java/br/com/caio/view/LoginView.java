@@ -36,6 +36,8 @@ public class LoginView implements LoginViewInterface {
 	private JLabel textoLogin;
 	private JLabel textoSenha;
 	private JButton botaoLogar;
+	private String sLogin = null;
+	private String sSenha = null;
 	
 	/*private JPanel criaPainelCampo(String label, JTextField campo) {
 		JPanel panel1 = new JPanel();
@@ -62,6 +64,20 @@ public class LoginView implements LoginViewInterface {
 		
 		botaoLogar = new JButton("Entrar");
 		panelLogin.add(botaoLogar,BorderLayout.CENTER);
+		
+		botaoLogar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				
+				sLogin = textoLogin.getText();
+				sSenha = textoSenha.getText();
+				
+				service.buscarCliente(sLogin, sSenha);
+				table.clearSelection();
+
+
+			}
+		});
 		
 		return panelLogin;		
 	}
