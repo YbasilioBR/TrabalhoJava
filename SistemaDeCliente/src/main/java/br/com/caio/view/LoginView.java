@@ -33,23 +33,35 @@ public class LoginView implements LoginViewInterface {
 
 	private JTextField campoLogin;	
 	private JTextField campoSenha;
+	private JLabel textoLogin;
+	private JLabel textoSenha;
+	private JButton botaoLogar;
 	
-	private JPanel criaPainelCampo(String label, JTextField campo) {
+	/*private JPanel criaPainelCampo(String label, JTextField campo) {
 		JPanel panel1 = new JPanel();
 		panel1.setLayout(new GridLayout(1, 2));
 		panel1.add(new JLabel(label));
 		panel1.add(campo);
 		return panel1;
-	}	
+	}	*/
 	
 	private JPanel desenhaPanelBotoes() {
-		JPanel panelLogin = new JPanel();
-	
+		JPanel panelLogin = new JPanel(new GridLayout(3,1));
+
+		textoLogin = new JLabel("Login");
+		panelLogin.add(textoLogin);
+		
 		campoLogin = new JTextField("");
-		panelLogin.add(criaPainelCampo("Login:", campoLogin),BorderLayout.NORTH);
+		panelLogin.add(campoLogin);
+		
+		textoSenha = new JLabel("Senha");
+		panelLogin.add(textoSenha);
 		
 		campoSenha = new JTextField("");		
-		panelLogin.add(criaPainelCampo("Senha:", campoSenha),BorderLayout.SOUTH);
+		panelLogin.add(campoSenha);
+		
+		botaoLogar = new JButton("Entrar");
+		panelLogin.add(botaoLogar,BorderLayout.CENTER);
 		
 		return panelLogin;		
 	}
@@ -57,13 +69,12 @@ public class LoginView implements LoginViewInterface {
 	
 	
 	private void desenhaTela() throws Exception {
-		janela.setLayout(new GridLayout(3,0));
-		janela.getContentPane().add(desenhaPanelBotoes(), BorderLayout.CENTER);
 
+		janela.getContentPane().add(desenhaPanelBotoes(), BorderLayout.CENTER);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.pack();
 		janela.setVisible(true);
-		janela.setSize(300, 300);
+		janela.setSize(300, 120);
 	}
 
 	public LoginView() throws Exception {
