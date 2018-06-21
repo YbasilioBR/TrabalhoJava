@@ -16,8 +16,9 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.text.ViewFactory;
 
-import br.com.caio.dto.ClienteDTO;
+import br.com.caio.dto.UsuarioDTO;
 import br.com.caio.model.RepositoryFactory;
 import br.com.caio.service.UsuarioServiceInterface;
 import br.com.caio.service.ServiceFactory;
@@ -69,11 +70,23 @@ public class LoginView implements LoginViewInterface {
 
 			public void actionPerformed(ActionEvent e) {
 				
+				UsuarioDTO objUsuario = new UsuarioDTO();
+				
 				sLogin = textoLogin.getText();
 				sSenha = textoSenha.getText();
 				
-				service.buscarCliente(sLogin, sSenha);
-				table.clearSelection();
+				objUsuario = service.buscarCliente(sLogin, sSenha);
+				
+				if (objUsuario.getId() != 0){
+					try {
+						br.com.caio.view.ViewFactory.criaUsuarioView();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}else{
+					JOptionPane.showMessageDialog(janela, "Não encntrado");
+				}
 
 
 			}

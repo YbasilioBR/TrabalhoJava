@@ -35,8 +35,8 @@ public class UsuarioRepository implements UsuarioRepositoryInterface {
 				usuarioDTO.setId(resultSet.getInt("id"));
 				usuarioDTO.setLogin(resultSet.getString("nome"));
 				usuarioDTO.setSenha(resultSet.getString("senha"));
-				usuarioDTO.setAcessocliente(resultSet.getInt("acessocliente"));
-				usuarioDTO.setAcessousuario(resultSet.getInt("acessousuario"));
+				usuarioDTO.setAcessocliente(resultSet.getBoolean("acessocliente"));
+				usuarioDTO.setAcessousuario(resultSet.getBoolean("acessousuario"));
 			}
 			resultSet.close();
 			statement.close();

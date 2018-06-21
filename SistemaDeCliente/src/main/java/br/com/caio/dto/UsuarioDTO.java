@@ -4,9 +4,9 @@ public class UsuarioDTO {
 
 	private String login;
 	private String senha;
-	private int id;
-	private int acessocliente;
-	private int acessousuario;
+	private long id;
+	private boolean acessocliente;
+	private boolean acessousuario;
 	
 	public UsuarioDTO() {
 	}
@@ -16,7 +16,7 @@ public class UsuarioDTO {
 		this.senha = senha;
 	}
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -24,19 +24,19 @@ public class UsuarioDTO {
 		this.id = id;
 	}
 
-	public int getAcessocliente() {
+	public boolean getAcessocliente() {
 		return acessocliente;
 	}
 
-	public void setAcessocliente(int acessocliente) {
+	public void setAcessocliente(boolean acessocliente) {
 		this.acessocliente = acessocliente;
 	}
 
-	public int getAcessousuario() {
+	public boolean getAcessousuario() {
 		return acessousuario;
 	}
 
-	public void setAcessousuario(int acessousuario) {
+	public void setAcessousuario(boolean acessousuario) {
 		this.acessousuario = acessousuario;
 	}
 	

@@ -10,5 +10,9 @@ public class ViewFactory {
 		return new LoginView();
 	}
 	
+	public static UsuarioViewInterface criaUsuarioView() throws Exception{
+		return new UsuarioView();
+	}
+	
 	
 }
